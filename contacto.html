@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacta a TecnoRescate y consulta las pruebas del incidente que borró la tienda de Internet.">
+  <title>Contacto y pruebas del incidente | TecnoRescate</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/datos.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/chatbot.js" defer></script>
+  <script src="js/contacto.js" defer></script>
+</head>
+<body>
+
+  <a class="enlace-saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <a class="logo" id="logo" href="index.html" aria-label="TecnoRescate, ir al inicio">Tecno<span>Rescate</span></a>
+    <nav class="menu" aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+        <li><a href="catalogo.html#favoritos" class="enlace-favoritos">Favoritos (<span id="contador-favoritos">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+
+    <h1 class="glitch" data-texto="Contacto y pruebas">Contacto y pruebas del incidente</h1>
+
+    <section id="formulario" aria-labelledby="formulario-titulo">
+      <h2 id="formulario-titulo">Escríbenos</h2>
+      <p>Consúltanos por un celular, un pedido o una garantía. <strong>Nunca te pediremos cédula, tarjeta ni contraseñas.</strong></p>
+
+      <form id="formulario-contacto" novalidate>
+        <fieldset>
+          <legend>Tus datos</legend>
+
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" autocomplete="name" required aria-describedby="error-nombre">
+          <span id="error-nombre" class="mensaje-error"></span>
+
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" autocomplete="email" required aria-describedby="error-correo">
+          <span id="error-correo" class="mensaje-error"></span>
+
+          <label for="asunto">Asunto</label>
+          <select id="asunto" name="asunto">
+            <option value="producto">Consulta de un producto</option>
+            <option value="pedido">Estado de un pedido</option>
+            <option value="garantia">Garantía</option>
+            <option value="otro">Otro</option>
+          </select>
+
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required aria-describedby="error-mensaje"></textarea>
+          <span id="error-mensaje" class="mensaje-error"></span>
+
+          <label>
+            <input type="checkbox" id="privacidad-aceptada" name="privacidad" required aria-describedby="error-privacidad">
+            He leído el aviso de privacidad
+          </label>
+          <span id="error-privacidad" class="mensaje-error"></span>
+        </fieldset>
+
+        <button type="submit" class="boton">Enviar mensaje</button>
+      </form>
+
+      <p id="mensaje-contacto" aria-live="polite"></p>
+
+      <details id="privacidad">
+        <summary>Aviso de privacidad</summary>
+        <p>Este formulario es parte de un proyecto académico. Los datos que escribas se usan solo para mostrar una confirmación en pantalla: no se envían a ningún servidor ni se guardan.</p>
+      </details>
+    </section>
+
+    <section id="pruebas" aria-labelledby="pruebas-titulo">
+      <h2 id="pruebas-titulo">Pruebas del incidente</h2>
+      <p>Esta es la evidencia de lo que ocurrió la noche del borrado. Todo es ficticio y está hecho con fines educativos.</p>
+
+      <article>
+        <h3>Registro de eventos</h3>
+        <table class="tabla-registro">
+          <caption>Registro de eventos de la noche del incidente (ficticio)</caption>
+          <thead>
+            <tr>
+              <th scope="col">Hora</th>
+              <th scope="col">Nivel</th>
+              <th scope="col">Evento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><time datetime="2026-09-13T23:41">23:41</time></td>
+              <td class="nivel nivel-aviso">ADVERTENCIA</td>
+              <td>Inicio de sesión en el panel de administración desde una ubicación inusual (IP 203.0.113.45).</td>
+            </tr>
+            <tr>
+              <td><time datetime="2026-09-13T23:52">23:52</time></td>
+              <td class="nivel nivel-aviso">ADVERTENCIA</td>
+              <td>Cambio de la contraseña del administrador sin confirmación.</td>
+            </tr>
+            <tr>
+              <td><time datetime="2026-09-14T00:03">00:03</time></td>
+              <td class="nivel nivel-critico">CRÍTICO</td>
+              <td>Descarga masiva de la base de datos de productos.</td>
+            </tr>
+            <tr>
+              <td><time datetime="2026-09-14T00:17">00:17</time></td>
+              <td class="nivel nivel-critico">CRÍTICO</td>
+              <td>Eliminación de los archivos del sitio web.</td>
+            </tr>
+            <tr>
+              <td><time datetime="2026-09-14T00:21">00:21</time></td>
+              <td class="nivel nivel-critico">CRÍTICO</td>
+              <td>Cuentas de redes sociales desvinculadas y borradas.</td>
+            </tr>
+            <tr>
+              <td><time datetime="2026-09-14T00:25">00:25</time></td>
+              <td class="nivel nivel-critico">CRÍTICO</td>
+              <td>Sitio web fuera de línea (error 404).</td>
+            </tr>
+            <tr>
+              <td><time datetime="2026-09-14T07:30">07:30</time></td>
+              <td class="nivel nivel-info">INFORMATIVO</td>
+              <td>El equipo detecta la desaparición e inicia la reconstrucción.</td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+
+      <article>
+        <h3>Capturas de pantalla</h3>
+        <div class="rejilla">
+
+          <figure class="captura">
+            <div class="captura-ventana" aria-hidden="true">
+              <div class="captura-barra"><span class="captura-url">www.tecnorescate.example</span></div>
+              <div class="captura-cuerpo">
+                <p class="captura-grande">404</p>
+                <p>Sitio no encontrado</p>
+              </div>
+            </div>
+            <figcaption>Captura 1: la tienda en línea mostrando error 404 tras el borrado.</figcaption>
+          </figure>
+
+          <figure class="captura">
+            <div class="captura-ventana" aria-hidden="true">
+              <div class="captura-barra"><span class="captura-url">redes.example/tecnorescate</span></div>
+              <div class="captura-cuerpo">
+                <p class="captura-grande">@tecnorescate</p>
+                <p>Esta cuenta no está disponible</p>
+              </div>
+            </div>
+            <figcaption>Captura 2: la cuenta de la tienda en una red social, eliminada.</figcaption>
+          </figure>
+
+          <figure class="captura">
+            <div class="captura-ventana" aria-hidden="true">
+              <div class="captura-barra"><span class="captura-url">correo.example</span></div>
+              <div class="captura-cuerpo">
+                <p class="captura-grande">Alerta</p>
+                <p>Acceso inusual a tu panel de administración</p>
+              </div>
+            </div>
+            <figcaption>Captura 3: correo de alerta de seguridad recibido durante el ataque.</figcaption>
+          </figure>
+
+        </div>
+      </article>
+
+      <article>
+        <h3>Mensaje encontrado en el USB</h3>
+        <blockquote class="mensaje-usb">
+          <p>"Tu negocio ha sido borrado de la existencia digital. Si quieres recuperarlo, deberás reinventarlo. Usa la tecnología, la creatividad y tu ingenio para traerlo de vuelta."</p>
+        </blockquote>
+        <p>— <cite>Mensaje hallado en un USB sobre el mostrador de la tienda</cite></p>
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p><small>© 2026 TecnoRescate. Proyecto académico: los productos, precios, registros y el incidente son ficticios.</small></p>
+    <p><small><a href="contacto.html#privacidad">Aviso de privacidad</a></small></p>
+  </footer>
+
+  <aside id="chatbot" class="chatbot" aria-label="Asistente virtual">
+    <button type="button" id="chatbot-abrir" class="chatbot-boton" aria-expanded="false" aria-controls="chatbot-ventana">Chat</button>
+    <section id="chatbot-ventana" class="chatbot-ventana" aria-labelledby="chatbot-titulo" hidden>
+      <header class="chatbot-cabecera">
+        <h2 id="chatbot-titulo">Asistente TecnoRescate</h2>
+        <button type="button" id="chatbot-cerrar" aria-label="Cerrar asistente">✕</button>
+      </header>
+      <div id="chatbot-mensajes" class="chatbot-mensajes" role="log" aria-live="polite"></div>
+      <div class="chatbot-sugerencias">
+        <button type="button" data-pregunta="¿Qué pasó con la tienda?">¿Qué pasó?</button>
+        <button type="button" data-pregunta="Quiero un celular">Quiero un celular</button>
+        <button type="button" data-pregunta="¿Tienen garantía?">Garantía</button>
+      </div>
+      <form id="chatbot-form" class="chatbot-form">
+        <label for="chatbot-entrada" class="visualmente-oculto">Escribe tu mensaje</label>
+        <input type="text" id="chatbot-entrada" name="mensaje" placeholder="Escribe tu pregunta" autocomplete="off">
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </aside>
+
+</body>
+</html>

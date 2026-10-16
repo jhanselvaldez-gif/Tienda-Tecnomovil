@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tecnomovil, tienda de celulares en línea: equipos verificados, garantía y compra segura.">
+  <title>Inicio | Tecnomovil</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/datos.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/chatbot.js" defer></script>
+</head>
+<body>
+
+  <!-- Pantalla de error inicial: el JS la quita al hacer clic en "Restaurar sistema" -->
+  <section id="pantalla-error" class="pantalla-error" aria-labelledby="error-titulo">
+    <div class="error-contenido">
+      <p class="error-codigo glitch" data-texto="404">404</p>
+      <h2 id="error-titulo">Tecnomovil no existe</h2>
+      <p>Este sitio fue eliminado. Sin catálogo, sin tienda, sin rastro.</p>
+      <div id="error-progreso" hidden>
+        <progress id="barra-recuperacion" max="100" value="0">0%</progress>
+        <p id="error-estado" aria-live="polite"></p>
+      </div>
+      <button type="button" id="boton-restaurar" class="boton">Restaurar sistema</button>
+    </div>
+  </section>
+
+  <a class="enlace-saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+<a class="logo" id="logo" href="index.html" aria-label="Tecnomovil, ir al inicio"><img class="logo-imagen" src="assets/Logo/logo-tecnomovil.png" alt="" width="84" height="84">Tecno<span>movil</span></a>    <nav class="menu" aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html" aria-current="page">Inicio</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="catalogo.html#favoritos" class="enlace-favoritos">Favoritos (<span id="contador-favoritos">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+
+    <section class="portada" aria-labelledby="portada-titulo">
+      <h1 id="portada-titulo" class="glitch" data-texto="De vuelta del vacío">De vuelta del vacío</h1>
+      <p>Tecnomovil, tu tienda de celulares, fue borrada de Internet. Volvimos más seguros, con equipos verificados y nuevas funciones.</p>
+      <p>
+        <a class="boton" href="catalogo.html">Ver catálogo</a>
+        <a class="boton boton-secundario" href="historia.html">¿Qué pasó?</a>
+      </p>
+    </section>
+
+    <section aria-labelledby="gamas-titulo">
+      <h2 id="gamas-titulo">Elige tu gama</h2>
+      <div class="rejilla">
+        <article class="tarjeta-info">
+          <h3>Gama baja</h3>
+          <p>Celulares confiables para el día a día.</p>
+          <p class="rango">Desde RD$ 8,900</p>
+          <a href="catalogo.html?gama=baja">Ver gama baja</a>
+        </article>
+        <article class="tarjeta-info">
+          <h3>Gama media y media-alta</h3>
+          <p>El mejor equilibrio entre precio y rendimiento.</p>
+          <p class="rango">Desde RD$ 14,900</p>
+          <a href="catalogo.html?gama=media,media-alta">Ver gama media</a>
+        </article>
+        <article class="tarjeta-info">
+          <h3>Gama alta</h3>
+          <p>Lo último en cámara, pantalla y potencia.</p>
+          <p class="rango">Desde RD$ 38,900</p>
+          <a href="catalogo.html?gama=alta">Ver gama alta</a>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="seguros-titulo">
+      <h2 id="seguros-titulo">Ahora, más seguros</h2>
+      <ul class="lista-seguridad">
+        <li><strong>Equipos verificados:</strong> revisamos el IMEI de cada celular.</li>
+        <li><strong>Garantía incluida:</strong> compra con respaldo.</li>
+        <li><strong>Tus datos protegidos:</strong> nunca te pedimos cédula, tarjeta ni contraseñas.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p><small>© 2026 Tecnomovil. Proyecto académico: los productos, precios, registros y el incidente son ficticios.</small></p>
+    <p><small><a href="contacto.html#privacidad">Aviso de privacidad</a></small></p>
+  </footer>
+
+  <aside id="chatbot" class="chatbot" aria-label="Asistente virtual">
+    <button type="button" id="chatbot-abrir" class="chatbot-boton" aria-expanded="false" aria-controls="chatbot-ventana">Chat</button>
+    <section id="chatbot-ventana" class="chatbot-ventana" aria-labelledby="chatbot-titulo" hidden>
+      <header class="chatbot-cabecera">
+        <h2 id="chatbot-titulo">Asistente Tecnomovil</h2>
+        <button type="button" id="chatbot-cerrar" aria-label="Cerrar asistente">✕</button>
+      </header>
+      <div id="chatbot-mensajes" class="chatbot-mensajes" role="log" aria-live="polite"></div>
+      <div class="chatbot-sugerencias">
+        <button type="button" data-pregunta="¿Qué pasó con la tienda?">¿Qué pasó?</button>
+        <button type="button" data-pregunta="Quiero un celular">Quiero un celular</button>
+        <button type="button" data-pregunta="¿Tienen garantía?">Garantía</button>
+      </div>
+      <form id="chatbot-form" class="chatbot-form">
+        <label for="chatbot-entrada" class="visualmente-oculto">Escribe tu mensaje</label>
+        <input type="text" id="chatbot-entrada" name="mensaje" placeholder="Escribe tu pregunta" autocomplete="off">
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </aside>
+
+</body>
+</html>

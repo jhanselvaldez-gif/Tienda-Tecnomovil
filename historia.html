@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="La historia del misterio: cómo Tecnomovil desapareció de Internet y cómo volvió.">
+  <title>Historia del misterio | Tecnomovil</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/datos.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/chatbot.js" defer></script>
+</head>
+<body>
+
+  <a class="enlace-saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <a class="logo" id="logo" href="index.html" aria-label="Tecnomovil, ir al inicio">Tecno<span>movil</span></a>
+    <nav class="menu" aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="historia.html" aria-current="page">Historia</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="catalogo.html#favoritos" class="enlace-favoritos">Favoritos (<span id="contador-favoritos">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+
+    <h1 class="glitch" data-texto="Historia del misterio">Historia del misterio</h1>
+
+    <section aria-labelledby="noche-titulo">
+      <h2 id="noche-titulo">La noche del borrado</h2>
+      <p>Tecnomovil vendía celulares en línea desde hacía años. Una noche, sin aviso, la página web desapareció, las redes sociales fueron borradas y los clientes dejaron de encontrarnos. Era como si la tienda nunca hubiera existido.</p>
+      <p>Esta es la reconstrucción de lo que ocurrió y de lo que hicimos para volver.</p>
+    </section>
+
+    <section aria-labelledby="tiempo-titulo">
+      <h2 id="tiempo-titulo">Línea de tiempo</h2>
+      <ol class="linea-tiempo">
+        <li>
+          <time datetime="2026-09-13T23:41">23:41</time>
+          <h3>Un acceso extraño</h3>
+          <p>Alguien entra al panel de administración desde un lugar desconocido.</p>
+        </li>
+        <li>
+          <time datetime="2026-09-14T00:17">00:17</time>
+          <h3>Los archivos desaparecen</h3>
+          <p>Se eliminan los archivos del sitio web y el catálogo.</p>
+        </li>
+        <li>
+          <time datetime="2026-09-14T00:21">00:21</time>
+          <h3>Las redes se apagan</h3>
+          <p>Las cuentas de redes sociales de la tienda son borradas.</p>
+        </li>
+        <li>
+          <time datetime="2026-09-14T07:30">07:30</time>
+          <h3>La tienda no existe</h3>
+          <p>Al abrir, el equipo descubre que Tecnomovil ya no aparece en Internet.</p>
+        </li>
+        <li>
+          <time datetime="2026-09-14T08:10">08:10</time>
+          <h3>El USB</h3>
+          <p>Sobre el mostrador aparece un USB con un mensaje.</p>
+        </li>
+        <li>
+          <time datetime="2026-09-21">Una semana después</time>
+          <h3>La reconstrucción</h3>
+          <p>La tienda vuelve a abrir, desde cero y con nuevas protecciones.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="usb-titulo">
+      <h2 id="usb-titulo">El mensaje del USB</h2>
+      <figure class="figura-usb">
+        <blockquote>
+          <p>"Tu negocio ha sido borrado de la existencia digital. Si quieres recuperarlo, deberás reinventarlo. Usa la tecnología, la creatividad y tu ingenio para traerlo de vuelta."</p>
+        </blockquote>
+        <figcaption>Mensaje encontrado en un USB sobre el mostrador de la tienda.</figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="cambios-titulo">
+      <h2 id="cambios-titulo">Lo que cambiamos</h2>
+      <ul>
+        <li><strong>Copias de seguridad automáticas</strong> de la tienda y del catálogo.</li>
+        <li><strong>Verificación en dos pasos</strong> para entrar al panel de administración.</li>
+        <li><strong>Contraseñas únicas</strong> y revisadas periódicamente.</li>
+        <li><strong>Vigilancia de accesos</strong> para detectar movimientos extraños a tiempo.</li>
+        <li><strong>Equipos verificados con IMEI</strong> para que compres con confianza.</li>
+      </ul>
+      <p>Si quieres ver la evidencia del incidente, visita la página de <a href="contacto.html#pruebas">contacto y pruebas</a>.</p>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <p><small>© 2026 Tecnomovil. Proyecto académico: los productos, precios, registros y el incidente son ficticios.</small></p>
+    <p><small><a href="contacto.html#privacidad">Aviso de privacidad</a></small></p>
+  </footer>
+
+  <aside id="chatbot" class="chatbot" aria-label="Asistente virtual">
+    <button type="button" id="chatbot-abrir" class="chatbot-boton" aria-expanded="false" aria-controls="chatbot-ventana">Chat</button>
+    <section id="chatbot-ventana" class="chatbot-ventana" aria-labelledby="chatbot-titulo" hidden>
+      <header class="chatbot-cabecera">
+        <h2 id="chatbot-titulo">Asistente Tecnomovil</h2>
+        <button type="button" id="chatbot-cerrar" aria-label="Cerrar asistente">✕</button>
+      </header>
+      <div id="chatbot-mensajes" class="chatbot-mensajes" role="log" aria-live="polite"></div>
+      <div class="chatbot-sugerencias">
+        <button type="button" data-pregunta="¿Qué pasó con la tienda?">¿Qué pasó?</button>
+        <button type="button" data-pregunta="Quiero un celular">Quiero un celular</button>
+        <button type="button" data-pregunta="¿Tienen garantía?">Garantía</button>
+      </div>
+      <form id="chatbot-form" class="chatbot-form">
+        <label for="chatbot-entrada" class="visualmente-oculto">Escribe tu mensaje</label>
+        <input type="text" id="chatbot-entrada" name="mensaje" placeholder="Escribe tu pregunta" autocomplete="off">
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </aside>
+
+</body>
+</html>

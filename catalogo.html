@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo de Tecnomovil: 25 celulares con filtros por marca, gama, precio y más.">
+  <title>Catálogo | Tecnomovil</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script src="js/datos.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/chatbot.js" defer></script>
+  <script src="js/catalogo.js" defer></script>
+</head>
+<body>
+
+  <a class="enlace-saltar" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <a class="logo" id="logo" href="index.html" aria-label="Tecnomovil, ir al inicio">Tecno<span>movil</span></a>
+    <nav class="menu" aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="historia.html">Historia</a></li>
+        <li><a href="catalogo.html" aria-current="page">Catálogo</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="catalogo.html#favoritos" class="enlace-favoritos">Favoritos (<span id="contador-favoritos">0</span>)</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+
+    <h1 class="glitch" data-texto="Catálogo">Catálogo</h1>
+    <p>25 modelos de 5 marcas. Los precios y especificaciones son de ejemplo.</p>
+    <noscript><p>Activa JavaScript para ver el catálogo.</p></noscript>
+
+    <div class="catalogo">
+
+      <aside class="filtros" aria-label="Filtros del catálogo">
+        <details class="filtros-detalle">
+          <summary>Filtros</summary>
+          <form id="formulario-filtros">
+
+            <fieldset>
+              <legend>Buscar</legend>
+              <label for="buscador" class="visualmente-oculto">Buscar por marca o modelo</label>
+              <input type="search" id="buscador" name="buscador" placeholder="Marca o modelo" maxlength="60">
+            </fieldset>
+
+            <fieldset>
+              <legend>Marca</legend>
+              <label><input type="checkbox" name="marca" value="Apple"> Apple (iPhone)</label>
+              <label><input type="checkbox" name="marca" value="Samsung"> Samsung</label>
+              <label><input type="checkbox" name="marca" value="Xiaomi"> Xiaomi</label>
+              <label><input type="checkbox" name="marca" value="Motorola"> Motorola</label>
+              <label><input type="checkbox" name="marca" value="Honor"> Honor</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Gama</legend>
+              <label><input type="checkbox" name="gama" value="baja"> Baja</label>
+              <label><input type="checkbox" name="gama" value="media"> Media</label>
+              <label><input type="checkbox" name="gama" value="media-alta"> Media-alta</label>
+              <label><input type="checkbox" name="gama" value="alta"> Alta</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Precio (RD$)</legend>
+              <label for="precio-min">Mínimo</label>
+              <input type="number" id="precio-min" name="precio-min" min="0" step="500" placeholder="0">
+              <label for="precio-max">Máximo</label>
+              <input type="number" id="precio-max" name="precio-max" min="0" step="500" placeholder="Sin límite">
+            </fieldset>
+
+            <fieldset>
+              <legend>Características</legend>
+              <label for="almacenamiento">Almacenamiento</label>
+              <select id="almacenamiento" name="almacenamiento">
+                <option value="">Todos</option>
+                <option value="128">128 GB</option>
+                <option value="256">256 GB</option>
+                <option value="512">512 GB</option>
+              </select>
+              <label for="ram">Memoria RAM</label>
+              <select id="ram" name="ram">
+                <option value="">Todas</option>
+                <option value="4">4 GB</option>
+                <option value="6">6 GB</option>
+                <option value="8">8 GB</option>
+                <option value="12">12 GB</option>
+                <option value="16">16 GB</option>
+              </select>
+              <label><input type="checkbox" id="filtro-5g" name="cinco-g"> Solo con 5G</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Estado</legend>
+              <label><input type="radio" name="estado" value="" checked> Todos</label>
+              <label><input type="radio" name="estado" value="Nuevo"> Nuevo</label>
+              <label><input type="radio" name="estado" value="Reacondicionado"> Reacondicionado certificado</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Sistema operativo</legend>
+              <label><input type="radio" name="so" value="" checked> Todos</label>
+              <label><input type="radio" name="so" value="Android"> Android</label>
+              <label><input type="radio" name="so" value="iOS"> iOS</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Disponibilidad</legend>
+              <label><input type="checkbox" id="solo-disponibles" name="solo-disponibles"> Solo con existencias</label>
+              <label><input type="checkbox" id="solo-favoritos" name="solo-favoritos"> Solo mis favoritos</label>
+            </fieldset>
+
+            <button type="reset" class="boton boton-secundario">Limpiar filtros</button>
+
+          </form>
+        </details>
+      </aside>
+
+      <section class="resultados" aria-labelledby="resultados-titulo">
+        <header class="resultados-cabecera">
+          <h2 id="resultados-titulo">Resultados</h2>
+          <p id="contador-resultados" aria-live="polite">Mostrando 0 celulares</p>
+          <div>
+            <label for="orden">Ordenar por</label>
+            <select id="orden" name="orden">
+              <option value="relevancia">Por marca</option>
+              <option value="precio-asc">Precio: menor a mayor</option>
+              <option value="precio-desc">Precio: mayor a menor</option>
+              <option value="nombre">Nombre (A-Z)</option>
+            </select>
+          </div>
+        </header>
+
+        <!-- El JS inserta aquí las 25 tarjetas (clases div1 a div25) -->
+        <div id="lista-productos" class="parent"></div>
+
+        <p id="sin-resultados" hidden>No encontramos celulares con esos filtros. Prueba quitando alguno.</p>
+      </section>
+
+    </div>
+
+    <details class="herramientas-prueba">
+      <summary>Herramientas de prueba</summary>
+      <p>El inventario se guarda solo en tu navegador. Si agotas un modelo para probar el chatbot, puedes reiniciarlo.</p>
+      <button type="button" id="reiniciar-inventario" class="boton boton-secundario">Reiniciar inventario (8 por modelo)</button>
+    </details>
+
+    <!-- Molde de tarjeta: el JS lo copia por cada celular -->
+    <template id="plantilla-tarjeta">
+      <article class="tarjeta-producto">
+        <figure>
+          <img class="tarjeta-imagen" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" width="220" height="220" loading="lazy">
+        </figure>
+        <div class="tarjeta-cuerpo">
+          <p class="tarjeta-gama"></p>
+          <h3 class="tarjeta-modelo"></h3>
+          <p class="tarjeta-almacenamiento"></p>
+          <p class="tarjeta-precio"></p>
+          <p class="tarjeta-specs"></p>
+          <p class="tarjeta-stock"></p>
+          <div class="tarjeta-acciones">
+            <button type="button" class="boton-favorito" aria-pressed="false" aria-label="Agregar a favoritos">♡</button>
+            <button type="button" class="boton boton-comprar">Comprar</button>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <!-- Ventana de compra (simulada) -->
+    <dialog id="dialogo-compra" aria-labelledby="compra-titulo">
+      <form id="formulario-compra" novalidate>
+        <h2 id="compra-titulo">Confirmar compra</h2>
+        <p id="compra-producto"></p>
+        <p id="compra-disponibles"></p>
+        <label for="compra-cantidad">Cantidad</label>
+        <input type="number" id="compra-cantidad" min="1" step="1" value="1" required>
+        <label for="compra-cupon">Código de descuento (opcional)</label>
+        <input type="text" id="compra-cupon" maxlength="20" autocomplete="off">
+        <p id="compra-total" aria-live="polite"></p>
+        <p id="compra-mensaje" class="mensaje-error" aria-live="polite"></p>
+        <div class="dialogo-acciones">
+          <button type="button" id="compra-cancelar" class="boton boton-secundario">Cancelar</button>
+          <button type="submit" class="boton">Confirmar compra</button>
+        </div>
+      </form>
+      <div id="compra-exito" hidden>
+        <h2>¡Compra confirmada!</h2>
+        <p id="exito-detalle"></p>
+        <p>Tu código de pedido: <strong id="exito-codigo"></strong></p>
+        <div class="dialogo-acciones">
+          <a id="exito-enlace" class="boton" href="servicios.html#seguimiento">Seguir mi pedido</a>
+          <button type="button" id="exito-cerrar" class="boton boton-secundario">Seguir comprando</button>
+        </div>
+      </div>
+    </dialog>
+
+  </main>
+
+  <footer class="pie">
+    <p><small>© 2026 Tecnomovil. Proyecto académico: los productos, precios, registros y el incidente son ficticios.</small></p>
+    <p><small><a href="contacto.html#privacidad">Aviso de privacidad</a></small></p>
+  </footer>
+
+  <aside id="chatbot" class="chatbot" aria-label="Asistente virtual">
+    <button type="button" id="chatbot-abrir" class="chatbot-boton" aria-expanded="false" aria-controls="chatbot-ventana">Chat</button>
+    <section id="chatbot-ventana" class="chatbot-ventana" aria-labelledby="chatbot-titulo" hidden>
+      <header class="chatbot-cabecera">
+        <h2 id="chatbot-titulo">Asistente Tecnomovil</h2>
+        <button type="button" id="chatbot-cerrar" aria-label="Cerrar asistente">✕</button>
+      </header>
+      <div id="chatbot-mensajes" class="chatbot-mensajes" role="log" aria-live="polite"></div>
+      <div class="chatbot-sugerencias"></div>
+      <form id="chatbot-form" class="chatbot-form">
+        <label for="chatbot-entrada" class="visualmente-oculto">Escribe tu mensaje</label>
+        <input type="text" id="chatbot-entrada" name="mensaje" placeholder="Escribe tu pregunta" autocomplete="off" maxlength="200">
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </aside>
+
+</body>
+</html>
